@@ -9,14 +9,16 @@ using System.Diagnostics;
 
 namespace LabelledSections
 {
-	public class MyContentPage : ContentPage {}
+	//public class MyContentPage : ContentPage {}
 
-    public class LabelledSectionPage : MyContentPage
+	public class MyListView : ListView {}
+
+    public class LabelledSectionPage : ContentPage
     {
         public LabelledSectionPage()
         {
 			// Not used for iOS, only for Android. Custom PageRenderer set up for iOS. See MyContentPageRenderer
-            var list = new ListView
+            var list = new MyListView
             {
                 ItemTemplate = new DataTemplate(typeof(TextCell))
                 {
