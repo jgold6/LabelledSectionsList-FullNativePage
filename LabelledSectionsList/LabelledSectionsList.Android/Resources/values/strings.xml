@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="app_name">LabelledSectionList</string>
+    <string name="menu_option1">Option 1</string>
+    <string name="menu_option2">Option 2</string>
+    <string name="menu_option3">Option 3</string>
+    <string name="menu_option4">Option 4</string>
+</resources>

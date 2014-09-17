@@ -159,7 +159,7 @@ Global
 		{AFF1D0DC-B584-4838-90BC-F0CCD92D8717}.Release|x86.ActiveCfg = Release|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = LabelledSectionsList\LabelledSectionsList.iOS\LabelledSectionsList.iOS.csproj
+		StartupItem = LabelledSectionsList\LabelledSectionsList.Android\LabelledSectionsList.Android.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,11 +13,24 @@ namespace LabelledSections
 
 	public class MyListView : ListView {}
 
+	public class MyMenuButton : Button {}
+
     public class LabelledSectionPage : ContentPage
     {
         public LabelledSectionPage()
         {
-			// Not used for iOS, only for Android. Custom PageRenderer set up for iOS. See MyContentPageRenderer
+			// My Menu button is cusomt rendered for Android, not iOS
+			var button = new MyMenuButton(){
+				Image = "image.png",
+				HorizontalOptions = LayoutOptions.End
+			};
+
+			button.Clicked += async (object sender, EventArgs e) => {
+				var action = await DisplayActionSheet ("Action Sheet: Send to?", "Cancel", null, "Email", "Twitter", "Facebook");
+				Debug.WriteLine("Action: " + action);
+			};
+
+			// MyListView is Custom Rendered for iOS, not for Android
             var list = new MyListView
             {
                 ItemTemplate = new DataTemplate(typeof(TextCell))
@@ -42,7 +55,7 @@ namespace LabelledSections
             Content = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Children = { list }
+                Children = { button, list }
             };
         }
 
