@@ -17,33 +17,33 @@ namespace LabelledSections.iOS
 		{
 			base.OnElementChanged(e);
 			var tableView = (UITableView)Control;
-			tableView.Source = new MyTableViewSource();
+			tableView.Delegate = new MyTableViewDelegate();
 		}
 	}
 
-	public class MyTableViewSource : UITableViewSource
+	public class MyTableViewDelegate : UITableViewDelegate
 	{
 		UIPopoverController popover {get; set;}
 
-		public override int RowsInSection(UITableView tableview, int section)
-		{
-			// Still use the model object from the Froms core project
-			return ListItemCollection.GetSortedData().Count;
-		}
-
-		public override UITableViewCell GetCell(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
-		{
-			UITableViewCell cell = tableView.DequeueReusableCell("UITableViewCell");
-			if (cell == null)
-				// Create an instance of UITableViewCell, with default appearance
-				cell = new UITableViewCell(UITableViewCellStyle.Subtitle,"UITableViewCell");
-
-			var item = ListItemCollection.GetSortedData()[indexPath.Row];
-			cell.TextLabel.Text = item.Name;
-
-			return cell;
-		}
-
+//		public override int RowsInSection(UITableView tableview, int section)
+//		{
+//			// Still use the model object from the Froms core project
+//			return ListItemCollection.GetSortedData().Count;
+//		}
+//
+//		public override UITableViewCell GetCell(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+//		{
+//			UITableViewCell cell = tableView.DequeueReusableCell("UITableViewCell");
+//			if (cell == null)
+//				// Create an instance of UITableViewCell, with default appearance
+//				cell = new UITableViewCell(UITableViewCellStyle.Subtitle,"UITableViewCell");
+//
+//			var item = ListItemCollection.GetSortedData()[indexPath.Row];
+//			cell.TextLabel.Text = item.Name;
+//
+//			return cell;
+//		}
+//
 		public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
 			var rectangle = tableView.RectForRowAtIndexPath(indexPath);
