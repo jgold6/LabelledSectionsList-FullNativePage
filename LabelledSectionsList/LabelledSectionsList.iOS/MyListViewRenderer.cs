@@ -63,12 +63,21 @@ namespace LabelledSections.iOS
 		{
 			if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad) {
 
-				UIViewController popoverViewController = new UIViewController();
-				popoverViewController.View = new UITextView(new RectangleF(0, 0, 100, 50)) {
-					Text = item.Name
-				};
+//				UIViewController popoverViewController = new UIViewController();
+//				popoverViewController.View = new UITextView(new RectangleF(0, 0, 100, 50)) {
+//					Text = item.Name
+//				};
+
+				LabelledSections.PopoverPage popoverPage = new LabelledSections.PopoverPage();
+				popoverPage.PopLabel.Text = item.Name;
+				popoverPage.PopButton.Text = item.Name + "Button";
+
+
+				UIViewController popoverViewController = popoverPage.CreateViewController();
+
+
 				popover = new UIPopoverController(popoverViewController);
-				popover.PopoverContentSize = new SizeF(100, 50);
+				//popover.PopoverContentSize = new SizeF(100, 50);
 
 				popover.DidDismiss += (object pSender, EventArgs e) => {
 					popover.Dismiss(true);
