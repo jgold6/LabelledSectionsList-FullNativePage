@@ -47,7 +47,15 @@ namespace LabelledSections.iOS
 		public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 		{
 			var rectangle = tableView.RectForRowAtIndexPath(indexPath);
-			var item = ListItemCollection.GetSortedData()[indexPath.Row];
+
+			int index = 0;
+
+			for (int i = 0; i < indexPath.Section; i++) {
+				index += tableView.NumberOfRowsInSection(i);
+			}
+			index += indexPath.Row;
+
+			var item = ListItemCollection.GetSortedData()[index];
 			ShowPopover(item, rectangle, tableView);
 		}
 
