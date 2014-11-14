@@ -77,7 +77,8 @@ namespace LabelledSections.iOS
 
 
 				popover = new UIPopoverController(popoverViewController);
-				//popover.PopoverContentSize = new SizeF(100, 50);
+
+//				popover.PopoverContentSize = new SizeF(100, 50);
 
 				popover.DidDismiss += (object pSender, EventArgs e) => {
 					popover.Dismiss(true);
