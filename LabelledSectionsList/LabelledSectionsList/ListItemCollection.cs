@@ -33,9 +33,9 @@ namespace LabelledSections
 			new ListItemValue ("Allen"),
 			new ListItemValue ("Cormack"),
 			new ListItemValue ("Cray"),
+			new ListItemValue ("Dewey"),
 			new ListItemValue ("Dijkstra"),
 			new ListItemValue ("Dix"),
-			new ListItemValue ("Dewey"),
 			new ListItemValue ("Erdos"),
 		};
     }

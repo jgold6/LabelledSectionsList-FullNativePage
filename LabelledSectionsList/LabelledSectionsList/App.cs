@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace LabelledSections
 {
-    public class App
+    public class App : Application
     {
         public static Page GetMainPage()
         {

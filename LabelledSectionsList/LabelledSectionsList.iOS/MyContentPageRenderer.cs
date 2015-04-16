@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using Xamarin.Forms.Platform.iOS;
 //using LabelledSections;
 using LabelledSections.iOS;
 using Xamarin.Forms;
-using MonoTouch.UIKit;
+using UIKit;
 using System.Collections.Generic;
-using System.Drawing;
+using CoreGraphics;
 
 //[assembly: ExportRenderer (typeof (LabelledSections.MyContentPage), typeof (MyContentPageRenderer))]
 

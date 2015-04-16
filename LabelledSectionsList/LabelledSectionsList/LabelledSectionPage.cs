@@ -52,6 +52,13 @@ namespace LabelledSections
 				Debug.WriteLine("Item Tapped {0}, ListView {1}", listItem.Name, sender);
             };
 
+			list.ItemAppearing += (object sender, ItemVisibilityEventArgs e) => {
+				if (e.Item is ListItemValue)
+					Debug.WriteLine("Item appeared: {0}", ((ListItemValue)e.Item).Name);
+				else 
+					Debug.WriteLine("Item appeared: {0}", e.Item);
+			};
+
             Content = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -83,4 +90,5 @@ namespace LabelledSections
             return allListItemGroups;
         }
     }
+
 }
